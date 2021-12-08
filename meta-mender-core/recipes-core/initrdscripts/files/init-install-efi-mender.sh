@@ -53,7 +53,7 @@ if [ -e /run/media/$1$2 ]; then
     if [ "$yn" = "y" ] || [ "$yn" = "Y" ]; then
         set -x
         rc=0
-        /bin/dd if=/run/media/$1$2 of=$devnode bs=8M || rc=$?
+        /bin/dd if=/run/media/$1$2 of=$devnode bs=8M status=progress || rc=$?
         sync
         if [ $rc = 0 ]; then
             echo "Installation successful."
