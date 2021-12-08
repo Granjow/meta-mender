@@ -42,15 +42,16 @@ fi
 
 if [ -e /run/media/$1$2 ]; then
     echo "Writing Mender-enabled Yocto image /run/media/$1$2 to ${devnode}"
-    ls /run/media
+    ls /run/media/$1
+    ls /sbin
+    ls /usr/sbin
     ls /bin
     ls /usr/bin
-    which lsblk
-    which file
     echo "bzcat /run/media/$1$2 | /bin/dd of=$devnode bs=8M"
     echo -n "OK to proceed? <y/n> "
     read yn
     if [ "$yn" = "y" ] || [ "$yn" = "Y" ]; then
+        set -x
         rc=0
         /bin/dd if=/run/media/$1$2 of=$devnode bs=8M || rc=$?
         sync
