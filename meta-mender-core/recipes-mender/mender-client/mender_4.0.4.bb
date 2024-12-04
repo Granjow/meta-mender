@@ -8,10 +8,10 @@ require mender-client-cpp.inc
 # - DEFAULT_PREFERENCE
 #-------------------------------------------------------------------------------
 
-SRC_URI = "gitsm://github.com/mendersoftware/mender;protocol=https;branch=4.0.x"
+SRC_URI = "gitsm://github.com/mendersoftware/mender;protocol=https;branch=cherry-4.0.x-superflous_http_version"
 
 # Tag: 4.0.4
-SRCREV = "80f37fe47f9eac22d78a8a848b77072d45976c3e"
+SRCREV = "a309d6b01db44452926bc09c8c72198ef1ef6e30"
 
 # Enable this in Betas, and in branches that cannot carry this major version as
 # default.
